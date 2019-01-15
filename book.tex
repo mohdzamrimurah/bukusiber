@@ -1,0 +1,144 @@
+\documentclass[11pt,a4paper]{book}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{fontspec, xunicode, xltxtra}
+\usepackage{titlesec}
+\usepackage{indentfirst}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage[fleqn]{amsmath}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+%\usepackage{amsmath}
+%\usepackage{sectsty}
+%\usepackage{picinpar}
+%\usepackage{bm}
+%\usepackage[boxed,linesnumbered]{algorithm2e}
+
+
+%\input{config.tex}
+
+\defaultfontfeatures{Mapping=tex-text} % to support TeX conventions like ``---''
+
+%\setsansfont{Deja Vu Sans}
+%\setmonofont{Deja Vu Mono}
+
+% other LaTeX packages.....
+%\usepackage{geometry} % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{a4paper} % or letterpaper (US) or a5paper or....
+%\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+%Fonts
+%\setCJKmainfont[BoldFont={Adobe Heiti Std}, ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+%\setCJKmonofont{Adobe Fangsong Std}
+\setmainfont[Mapping=tex-text, BoldFont={Minion Pro Bold}]{Minion Pro}
+%\setsansfont{Liberation Sans}
+%\setmonofont{Bitstream Vera Sans Mono}
+%\punctstyle{kaiming}
+%\setCJKfamilyfont{kai}{KaiTi}
+%\setCJKfamilyfont{hei}{SimHei}
+%\setCJKmainfont{SimSun}
+
+
+
+%PageStyle
+\setlength{\parindent}{2.5em}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{} % clear all fields
+%\fancyfoot[LF]{Copyright by Yinyanghu}
+\fancyfoot[RF]{\thepage}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrulewidth}{0.0pt}
+
+
+
+
+%NewCommands
+\newcommand\abs[1]{\left\lvert #1 \right\rvert}
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
+\newcommand\ceil[1]{\left\lceil #1 \right\rceil}
+\newcommand\yin[1]{\textit{#1}}
+\newcommand\yang[1]{\textbf{#1}}
+%\newcommand{\kai}{\CJKfamily{kai}}
+%\newcommand{\hei}{\CJKfamily{hei}}
+%\newcommand\TT{\rule{0pt}{2.6ex}}
+%\newcommand\BB{\rule[-1.2ex]{0pt}{0pt}}
+
+
+
+%Enumerate
+\renewcommand{\labelenumi}{\bfseries{\alph{enumi}.}}
+\renewcommand{\labelenumii}{\bfseries{\arabic{enumii}.}}
+
+
+\title{Penetration Testing and Ethical Hacking}
+\author{Many authors}
+%\institude{Nanjing University, China}
+\date{\today}
+
+
+\begin{document}
+
+%[frontmatter] turns off chapter numbering and uses roman numerals for page numbers;
+%[mainmatter] turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers;
+%[appendix] resets chapter numbering, uses letters for chapter numbers and doesn't fiddle with page numbering;
+%[backmatter] turns off chapter numbering and doesn't fiddle with page numbering.
+
+\frontmatter
+\maketitle
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+
+
+\section*{I Foundations}
+\pagebreak
+
+\nocite{*}
+
+\section*{Chapter 1}
+
+\pagebreak
+
+\section*{Chapter 2}
+
+\pagebreak
+
+
+\section*{Chapter 3}
+
+\pagebreak
+
+\section*{II Sorting and Order Statistics}
+\pagebreak
+
+
+\section*{III Data Structures}
+\pagebreak
+
+
+\section*{IV Advanced Design and Analysis Techniques}
+\pagebreak
+
+\section*{V Advanced Data Structures}
+\pagebreak
+
+
+\section*{VI Graph Algorithms}
+\pagebreak
+
+\bibliography{buku}
+\bibliographystyle{unsrt}
+
+\end{document}
