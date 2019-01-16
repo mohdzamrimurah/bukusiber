@@ -1,89 +1,40 @@
-\documentclass[11pt,a4paper]{book}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{fontspec, xunicode, xltxtra}
-\usepackage{titlesec}
-\usepackage{indentfirst}
-\usepackage{enumerate}
-\usepackage{multicol}
-\usepackage{multirow}
-\usepackage[fleqn]{amsmath}
-\usepackage{xcolor}
-\usepackage{listings}
-\usepackage{graphicx}
-\usepackage{fancyhdr}
-%\usepackage{algorithm}
-%\usepackage{algorithmic}
-%\usepackage{amsmath}
-%\usepackage{sectsty}
-%\usepackage{picinpar}
-%\usepackage{bm}
-%\usepackage[boxed,linesnumbered]{algorithm2e}
+\documentclass[7x9]{times}
+
+% use mit book class
 
 
-%\input{config.tex}
-
-\defaultfontfeatures{Mapping=tex-text} % to support TeX conventions like ``---''
-
-%\setsansfont{Deja Vu Sans}
-%\setmonofont{Deja Vu Mono}
-
-% other LaTeX packages.....
-%\usepackage{geometry} % See geometry.pdf to learn the layout options. There are lots.
-%\geometry{a4paper} % or letterpaper (US) or a5paper or....
-%\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
-
-\usepackage{graphicx} % support the \includegraphics command and options
-
-%Fonts
-%\setCJKmainfont[BoldFont={Adobe Heiti Std}, ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
-%\setCJKmonofont{Adobe Fangsong Std}
-\setmainfont[Mapping=tex-text, BoldFont={Minion Pro Bold}]{Minion Pro}
-%\setsansfont{Liberation Sans}
-%\setmonofont{Bitstream Vera Sans Mono}
-%\punctstyle{kaiming}
-%\setCJKfamilyfont{kai}{KaiTi}
-%\setCJKfamilyfont{hei}{SimHei}
-%\setCJKmainfont{SimSun}
-
-
-
-%PageStyle
-\setlength{\parindent}{2.5em}
-\pagestyle{fancy}
-\fancyhead{}
-\fancyfoot{} % clear all fields
-%\fancyfoot[LF]{Copyright by Yinyanghu}
-\fancyfoot[RF]{\thepage}
-\renewcommand{\footrulewidth}{0.4pt}
-\renewcommand{\headrulewidth}{0.0pt}
-
-
-
-
-%NewCommands
-\newcommand\abs[1]{\left\lvert #1 \right\rvert}
-\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
-\newcommand\ceil[1]{\left\lceil #1 \right\rceil}
-\newcommand\yin[1]{\textit{#1}}
-\newcommand\yang[1]{\textbf{#1}}
-%\newcommand{\kai}{\CJKfamily{kai}}
-%\newcommand{\hei}{\CJKfamily{hei}}
-%\newcommand\TT{\rule{0pt}{2.6ex}}
-%\newcommand\BB{\rule[-1.2ex]{0pt}{0pt}}
-
-
-
-%Enumerate
-\renewcommand{\labelenumi}{\bfseries{\alph{enumi}.}}
-\renewcommand{\labelenumii}{\bfseries{\arabic{enumii}.}}
 
 
 \title{Penetration Testing and Ethical Hacking}
 \author{Many authors}
 %\institude{Nanjing University, China}
 \date{\today}
+\edition{2019 Edition}
 
+
+
+%% For multiple indices:
+%\usepackage{multind}
+%\makeindex{topics}
+%\makeindex{authors}
+
+\def\taupav{\tau_{\mathrm{Pav}}}
+
+\newbox\oiintbox
+\setbox\oiintbox=\hbox{$\lower2pt\hbox{\huge$\displaystyle\circ$}
+	\hskip-13pt\displaystyle\int\hskip-7pt\int_{S}\ $}
+\def\oiint{\copy\oiintbox}
+
+\def\boldnabla{\hbox{\boldmath$\displaystyle\nabla$}}
+
+\nocropmarks
+
+\usepackage{multind}
+\makeindex{topics}
+\makeindex{authors}
+
+\usepackage{listings}
+\lstloadlanguages{bash,Python}
 
 \begin{document}
 
@@ -92,53 +43,145 @@
 %[appendix] resets chapter numbering, uses letters for chapter numbers and doesn't fiddle with page numbering;
 %[backmatter] turns off chapter numbering and doesn't fiddle with page numbering.
 
-\frontmatter
-\maketitle
+\titlepage
+
+\begin{copyrightpage}
+	\copyright\ 2019 Center for Cybersecurity and Cybersecurity Malaysia
+	
+	All rights reserved. No part of this book may be reproduced in
+	any form or by any electronic or mechanical means (including
+	photocopying, recording, or information storage and retrieval) without
+	permission in writing from the publisher.
+	
+	
+	This book was set in Syntax and Times Roman by the author.
+	
+	Printed and bound in the United States of America.
+	
+	Library of Congress Cataloging-in-Publication Data
+	
+	?? Book Title / ?? Book Author .\\
+	\hspace*{6pt} p. cm.
+	
+	Includes bibliographical references and index.\\
+	ISBN ???? 
+	\vfill
+	
+	10\ 9\ 8\ 7\ 6\ 5\ 4\ 3\ 2\ 1\
+	
+\end{copyrightpage}
 
 \tableofcontents
 \listoffigures
 \listoftables
 
-\mainmatter
+\begin{contributors}[twocolumn]
+	
+	\contrib 
+	Professor Alan Guth\\
+	Center for Theoretical Physics\\
+	Massachusetts Institute of Technology\\
+	Cambridge, Massachusetts, USA
+	
+	\contrib 
+	Professor Andrei Linde\\
+	Department of Physics\\
+	Stanford University\\
+	Stanford, CA, USA
+\end{contributors}
 
-\chapter{Preface}
 
-This book is based on lecture notes for \textit{TX6244:Ethical Hacking and Penetration Testing}, a course offered by Center for Cybersecurity(UKM) since 2014. This course is jointly developed by Cybersecurity Malaysia and Center for Cybersecurity. People who are involves in teaching and developing the lectures materials are (in no particular order);
-
-\begin{quote}
-Mohd Zamri Murah,
-\end{quote}
-
+\begin{preface}
+ALhamduiLlah. This book is based on lecture notes for \textit{TX6244:Ethical Hacking and Penetration Testing}, a course offered by Center for Cybersecurity(UKM) since 2014. This course is jointly developed by Center for Cybersecurity(UKM) and Cybersecurity Malaysia(CSM).
 
 We hope this book will provide a good overview for students into the field of penetration testing and ethical hacking. We also hope these materials will encourage students to further explore this exciting field.
 
-\chapter{Introduction}
+We try hard to be current up to 2019. However, this is a tall order with the amount of information available on the Internet. Al always, please inform of any errors or omissions to \url{zamri@ukm.edu.my}.
+
+The book source code is available on \url{github.com/mohdzamrimurah/bukusiber}, and we welcome collaboration from all users.
 
 
 
+\end{preface}
 
 
-\nocite{*}
+\chapter{Tools and Software}
 
-\section{Tools}
 
-\subsection{Linux}
-\subsection{Kali Linux}
-\subsection{git}
-\subsection{Python}
-\subsection{Raspberry Pi}
+\paragraph{Tools and Software}
+This chapter contain information about basic essential tools and software for penetration testing. Familiarity of these tools would make it easier to conduct penetration testing.
+
+
+\section{Linux}
+
+Linux\cite{sobell2015practical,barrett2016linux} is an operating system for computer, much like Window 10 or Mac OSX. It is based on Unix. Linux was first developed in 1991 by Linus Torvalds, a Finnish graduate student. Currently it is being develops and maintains by a group of software developers head by Linus Torvalds. It is widely uses in large technology companies like Google, Facebook, and Amazon. Linux is widely use as enterprise servers for enterprises daily operation. It is estimated that 70\% of web servers use Linux, with 30\% using Window-based servers.
+
+Linux is open source and free for everybody to use and to modify. The open source creative license make it possible for any person or organization to modify Linux to fit their needs. For instance, Chinese government produce their own modified version of Linux for the Chinese market\url{http://www.kylinos.com.cn/}. Similarly, many organization such as NSA, Google, Amazon have customized Linux for their need.
+
+There are many Linux distributions such as Ubuntu, SuSE, Debian and Red Hat. Red Hat(Linux) is widely use as enterprise servers, Ubuntu is widely by customer desktop and Debian is normally uses by software developers. A Linux distribution is a Linux operating system with other useful software such such text editor, pdf viewer, browser, music player and image processing. A Linux distribution is similar to a PC with Window 10, Microsoft Office software and other familiar software applications.
+
+\index{topics}{Linux}
+\index{topics}{Kali Linux}
+
+
+\paragraph{Kali Linux}is a Linux distribution for penetration testers. It consists of many widely used tools for pentest. This distribution make it easy to use coomon tools in a pentest. There are about 200+ tools in Kali Linux for various stages of a pentest.
+
+\section{git}
+
+\paragraph{git}\cite{loeliger2012} is a source code management tool. \url{github.com} is a git
+repository, where software developers share their software source codes in the Internet. \url{Github.com} host many open source pen test tools projects such as \url{metasploit} and \url{nmap}. A pen tester can clone the repository and install the software on his machine. With this approach, the pen tester can always use the latest version of the software.
+
+A pen tester need to clone the repository from \url{github.com}. An example for such action is given below for cloning \url{nmap} repository.
+
+
+\verb|git clone https://github.com/nmap/nmap.git|
+
+% https://www.online-convert.com/
+% take screen shot in png, convert to eps
+
+\begin{center}
+	\begin{figure}[ht]
+		\includegraphics[width=\textwidth]{00.46.46_46.eps}
+		\caption{github.com}
+	\end{figure}
+\end{center}
+
+
+\index{topics}{git}
+\index{authors}{Loeliger, Jon}
+
+\section{Python}
+\section{Raspberry Pi}
+
 \section{Cybersecurity News}
-\section{Definitions}
-\section{Web resources}
-\subsection{github.com}
-\subsection{Web Sites}
 
-\chapter{Preliminary}
+\section{Definitions}
+
+\section{Web resources}
+
+
+\section{Web Sites}
+
+\section{Summary}
+
+\begin{center}
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth]{tools.eps}
+		\caption{Basic tools for pen testers.}
+	\end{figure}
+\end{center}
+
+
+
+
+\chapternotes
+
+\chapter{Network Basic}
+
 \section{Network}
 \section{How Internet works}
 \section{IP, DNS}
 \section{Web servers}
-
 
 
 \chapter{Network}
@@ -151,6 +194,7 @@ We hope this book will provide a good overview for students into the field of pe
 
 
 \chapter{Web Apps}
+\section{Web Apps}
 \section{Reconnaissance}
 \section{Scanning}
 \section{Enumeration}
@@ -162,9 +206,15 @@ We hope this book will provide a good overview for students into the field of pe
 
 \chapter{Mobile}
 
+\chapter{Server and Desktop}
 
-
-\bibliography{buku}
+%\nocite{*}
+%\bibliographystyle{mit-chicago}
 \bibliographystyle{unsrt}
+\bibliography{buku}
+
+
+\printindex{authors}{Author Index}
+\printindex{topics}{Topic Index}
 
 \end{document}
