@@ -1,6 +1,6 @@
 \documentclass[7x9]{times}
 
-% use mit book class
+% use MIT book class
 
 
 
@@ -109,7 +109,7 @@ materials will encourage students to further explore this exciting
 field.
 
 We try hard to be current up to 2019. However, this is a tall order
-with the amount of information available on the Internet. Al always,
+with the amount of information available on the Internet. As always,
 please inform of any errors or omissions to \url{zamri@ukm.edu.my}.
 
 The book source code is available on
@@ -124,8 +124,11 @@ collaboration from all users.
 
 \paragraph{Cyber attacks} have increasing common in the past years. Many of these attack
 targeted business entities, government websites, financial institutions, 
-social network sites, power utilities, education sites and other sites. These attack could cause financial lost, data breach, lost of consumer confidence, dan other risks. Because
-of the increase frequency and the severity of the cyber attacks, many organization begin to
+social network sites, power utilities, education sites and other sites. These 
+attack could cause financial lost, data breach, lost of consumer confidence, 
+and other risks. Because
+of the increase frequency and the severity of the cyber attacks, many 
+organizations begin to
 take proactive measure to assess their own network security status. One of these proactive
 step is penetration testing.
 
@@ -136,15 +139,59 @@ that could be exploited by cyber hackers and to offer counter measures to these 
 
 \section{Cyber attacks}
 
-\paragraph{18/1/2019} A collection containing more than 87 gigabytes of personal information was leaked online. The data dump had 772,904,991 email addresses, and 21,222,975 passwords. Data breaches continue to happen as companies collect data on millions of people and fail to protect them properly. Marriott loss personal information belonging to 383 million guests, Yahoo data belonging to 3 billion accounts were stolen. About 147.7 million Social Security numbers taken in the Equifax data breach.
+\paragraph{18/1/2019} A collection containing more than 87 gigabytes of 
+personal information was leaked online. The data dump had 772,904,991 email 
+addresses, and 21,222,975 passwords. Data breaches continue to happen as 
+companies collect data on millions of people and fail to protect them properly. 
+Marriott loss personal information belonging to 383 millions guests, Yahoo data 
+belonging to 3 billions accounts were stolen. About 147.7 millions Social 
+Security numbers taken in the Equifax data breach.
 
 % https://www.zdnet.com/article/
 % singapore-suffers-most-serious-data-breach-affecting-1-5m-
 % healthcare-patients-including-prime/
-\paragraph{In Singapore}, 1.5 million patients of SingHealth had been accessed and copied. The stolen data included patients' name, national identification number, address, gender, race, and date of birth. Also, outpatient medical data of some 160,000 patients were compromised. Hackers had gained control through breaching a frontend workstation, from which they then were able to obtain privileged account credentials to gain access to SingHealth's database. Cybersecurity vendors have warned that the compromised data may find its way on the Dark Web.
+\paragraph{In Singapore}, 1.5 millions patients of SingHealth had been accessed 
+and copied. The stolen data included name, national identification number, 
+address, gender, race, and date of birth. Also, outpatient medical data of some 
+160,000 patients were compromised. Hackers had gained control through 
+breaching a front-end workstation, from which they then were able to obtain 
+privileged account credentials to gain access to SingHealth's database. 
+Cybersecurity vendors have warned that the compromised data may find its way on 
+the Dark Web.
 
 
 \section{Definitions}
+
+
+
+\section{Categories of a Pen Test}
+
+It is easier if we could category the type of Pen Test available. Typically, 
+a Pen Test could be done on 5 categories;
+\begin{enumerate}
+    \item network
+    \item web apps
+    \item mobile apps
+    \item wireless
+    \item desktop and server
+\end{enumerate}
+
+By understanding that there are different type of pen test, we could then
+learn how to do a pen test for each particular category. For instance, in doing
+a pen test for a web site, we normally uses exploitation tools such as 
+\url{Netsparker} and \url{Acunetix}. These tools will discover and enumerate 
+vulnerabilities
+on the web site. On the other hand, if we are doing a pen test on a network, we
+would use \url{nmap} or \url{Nessus} to discover vulnerabilities on the network.
+If we are testing wireless network, we could use \url{Wireshark} to capture the
+wireless traffic.
+
+It is important to realize the type of a pen test we are doing, and what
+kind of tools available to do the pen test. This is an important first step
+in a pen test. 
+
+
+
 
 
 
@@ -152,7 +199,7 @@ that could be exploited by cyber hackers and to offer counter measures to these 
 \chapter{Tools and Software}
 
 
-\paragraph{Tools and Software} This chapter contain
+\paragraph{Tools and Software} This chapter contains
 information about basic essential tools and software for penetration
 testing. Familiarity of these tools would make it easier to conduct
 penetration testing.
@@ -163,26 +210,26 @@ penetration testing.
 Linux\cite{sobell2015practical,barrett2016linux} is an operating
 system for computer, much like Window 10 or Mac OSX. It is based on
 Unix. Linux was first developed in 1991 by Linus Torvalds, a Finnish
-graduate student. Currently it is being develops and maintains by a
+graduate student. Today, it is being develops and maintains by a
 group of software developers head by Linus Torvalds. It is widely uses
 in large technology companies like Google, Facebook, and Amazon. Linux
-is widely use as enterprise servers for enterprises daily
+is widely used as business servers for businesses daily
 operation. It is estimated that 70\% of web servers use Linux, with
-30\% using Window-based servers.
+30\% of web servers using Window-based.
 
 Linux is open source and free for everybody to use and to modify. The
 open source creative license make it possible for any person or
-organization to modify Linux to fit their needs. For instance, Chinese
-government produce their own modified version of Linux for the Chinese
-market(\url{http://www.kylinos.com.cn/}). Similarly, many organization
+organization to modify Linux to fit their needs. For example, Chinese
+government produce their own amended version of Linux for the Chinese
+market(\url{http://www.kylinos.com.cn/}). Similarly, many organizations
 such as NSA, Google(\url{gLinux}), Amazon have customized Linux for
 their need. Figure~\ref{fig:ubuntu} shows a Linux Ubuntu desktop.
 
 There are many Linux distributions such as Ubuntu, SuSE, Debian and
-Red Hat. Red Hat(Linux) is widely use as enterprise servers, Ubuntu is
-widely by customer desktop and Debian is normally uses by software
+Red Hat. Red Hat(Linux) is widely used as business servers, Ubuntu is by 
+customer desktop and Debian is commonly uses by software
 developers. A Linux distribution is a Linux operating system with
-other useful software such such text editor, pdf viewer, browser,
+other useful software such as text editor, pdf viewer, browser,
 music player and image processing. A Linux distribution is similar to
 a PC with Window 10, Microsoft Office software and other familiar
 software applications.
@@ -224,6 +271,19 @@ tools for penetration testing.
 \label{fig:linux}
 \end{figure*}
 
+There exist various approach in installing and using Linux. One of the easiest is to install
+Kali Linux on a standalone machine. Another is to install Kali Linux as a dual boot system 
+together with Window 10/7. Another approach is to install Kali Linux on a virtual machine such
+as VirtualBox or VMware. Another is using docker. And, for more advance user, you can run Kali 
+Linux on the cloud, without installing anything on your computer. Please google for more information
+if you are interested in installing Kali Linux as your pen test platform.
+
+\index{topics}{docker}
+
+
+One widely used Linux derivative is Android, an operating system used in 
+mobile phone. It is estimated that Android has a market share of about 70\% 
+for mobile phone and 30\% for iOS.
 
 
 
@@ -275,14 +335,14 @@ in data science, deep learning and web development and software
 development. It has been used to develop tools for pen tests.  There
 are many pen test tools written in Python, hosted at
 \url{github.com}. An example is \url{Sublist3r}, a tool for network
-scanning and reconnaisance. \index{topics}{Sublist3r}
+scanning and reconnaissance \index{topics}{Sublist3r}
 
 \index{topics}{Python}
 \index{authors}{Lutz, Mark}
 
-Many process in a pen test can be automated using Python. Using
-Python, we could developed new tools for pen tests, automated the
-process and discovered new vulnerabilties.
+Many processes in a pen test can be automated using Python. We could develop 
+new tools for pen tests, automated the
+process and discovered new vulnerabilities.
 
 
 %\section{Raspberry Pi}
@@ -300,15 +360,36 @@ a life long attitude toward pen test where one try to always update oneself
 with the latest info about pen test. These are some of useful websites;
 \begin{enumerate}
 \item \url{https://github.com/enaqx/awesome-pentest}
+\item \url{https://github.com/paralax/Awesome-Pentest-1}
+\item \url{https://github.com/coreb1t/awesome-pentest-cheat-sheets}
+\item \url{https://pen-testing.sans.org/}
 \end{enumerate}
+
+
+
 
 
 \section{Cybersecurity Accreditation}
 
+There are many industry-based certificates that a pen tester
+could pursue to enhance marketability and to increase knowledge. One of the 
+certification is GPEN (GIAC Penetration Tester) at 
+\url{https://pen-testing.sans.org/certification/gpen}, offered by SANS  
+Institute. Another is OSCP (Offensive
+Security Certified Pen Tester) at \url{https://www.offensive-security.com/}.
+Another widely accepted certification is CEH(Certified Ethical Hacking) by 
+EC-Council\url{https://www.eccouncil.org/}.
 
-
+ 
 \section{Summary}
 
+For a basic skill, a pen tester need to be familiar with Linux, especially Kali
+Linux. He also need to know \url{git} and \url{github.com} for pen test tools
+repository. For advance pen test, he could learn Python for automation and 
+advance exploit.
+
+In summary, pen test is a wide field and there are almost unlimited information
+in the Internet. 
 \begin{center}
 	\begin{figure}[ht]
 		\includegraphics[scale=.75]{tools.eps}
@@ -316,12 +397,26 @@ with the latest info about pen test. These are some of useful websites;
 	\end{figure}
 \end{center}
 
+\begin{table}[]
+    \begin{tabular}{|c|l|c|}
+        \hline 
+        Tool & Use &  \\ 
+        \hline 
+        Linux & operating system &  \\ 
+        \hline 
+        git & software repository &  \\ 
+        \hline 
+        Python & Programming language. advance pen test &  \\ 
+        \hline 
+    \end{tabular}
+    \caption{Summary of common tools}
+    \label{tab:tools}
+\end{table}
 
 
 
 \chapternotes
-
-
+ 
 
 \chapter{Network Basic}
 
@@ -367,3 +462,83 @@ with the latest info about pen test. These are some of useful websites;
 \printindex{topics}{Topic Index}
 
 \end{document}
+
+
+% GPEN 
+Exam Certification Objectives
+
+Objectives	Objective Outcome Statement
+
+Advanced Password Attacks
+The candidate will be able to use additional 
+methods to attack password hashes and authenticate.
+
+Attacking Password Hashes
+The candidate will be able to obtain and attack 
+password hashes and other password representations.
+
+Escalation and Exploitation
+The candidate will be able to demonstrate the 
+fundamental concepts of exploitation, data exfiltration from compromised hosts 
+and pivoting to exploit other hosts within a target network.
+
+Exploitation Fundamentals
+The candidate will be able to demonstrate the 
+fundamental concepts associated with the exploitation phase of a pentest.
+
+Metasploit
+The candidate will be able to use and configure the Metasploit 
+Framework at an intermediate level.
+
+Moving Files with Exploits
+The candidate will be able to use exploits to move 
+files between remote systems.
+
+Password Attacks
+The candidate will understand types of password attacks, 
+formats, defenses, and the circumstances under which to use each password 
+attack variation. The candidate will be able to conduct password guessing 
+attacks.
+
+Password Formats and Hashes
+The candidate will demonstrate an understanding of 
+common password hashes and formats for storing password data.
+
+Penetration Test Planning
+The candidate will be able to demonstrate the 
+fundamental concepts associated with pen-testing, and utilize a 
+process-oriented approach to penetration testing and reporting.
+
+Penetration Testing with PowerShell and the Windows Command Line
+The candidate will demonstrate an understanding of the use of advanced Windows 
+command line skills during a penetration test, and demonstrate an understanding 
+of the use of advanced Windows Power Shell skills during a penetration test.
+
+Reconnaissance
+The candidate will understand the fundamental concepts of 
+reconnaissance and will understand how to obtain basic, high level information 
+about the target organization and network, often considered information 
+leakage, including but not limited to technical and non technical public 
+contacts, IP address ranges, document formats, and supported systems.
+
+Scanning and Host Discovery
+The candidate will be able to use the appropriate 
+technique to scan a network for potential targets, and to conduct port, 
+operating system and service version scans and analyze the results.
+Vulnerability Scanning	The candidate will be able to conduct vulnerability 
+scans and analyze the results.
+
+Web Application Injection Attacks
+The candidate will demonstrate an understanding of how injection attacks work 
+against web applications and how to 
+conduct them.
+
+Web Application Reconnaisance
+The candidate will demonstrate an understanding 
+of the use of tools and proxies to discover web application vulnerabilities.
+
+XSS and CSRF Attacks
+The candidate will demonstrate an understanding of how 
+XSS and CSRF attacks work and how to conduct them.
+
+%
