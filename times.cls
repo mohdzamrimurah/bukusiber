@@ -619,6 +619,7 @@ BoldItalicFont=MinionPro-BoldIt
 {MinionPro-Regular}
 
 %% Half title page
+
 \def\halftitlefont{\fontsize{12}{14}\fontspec{MyriadPro-Bold}}
 
 %% Series page note, new verso after halftitle page and Series page 
