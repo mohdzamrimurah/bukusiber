@@ -397,15 +397,41 @@ the latest info about a pen test.
 There are many industry-based certificates that a pen tester
 could pursue to enhance marketability and to increase
 knowledge. One of the certification is GPEN (GIAC
-Penetration Tester) at
-\url{https://pen-testing.sans.org/certification/gpen},
+Penetration Tester)\footnote{
+    \url{https://pen-testing.sans.org/certification/gpen}},
 offered by SANS Institute. Another is OSCP (Offensive
-Security Certified Pen Tester) at
-\url{https://www.offensive-security.com/}.  Another widely
+Security Certified Pen Tester)\footnote{
+\url{https://www.offensive-security.com/}}.  Another widely
 accepted certification is CEH (Certified Ethical Hacking) by
-EC-Council\url{https://www.eccouncil.org/}.
+EC-Council\footnote{\url{https://www.eccouncil.org/}}.
 
- 
+
+\section{Virtual Machine}
+
+\paragraph{Virtualization} allow you to build a virtual lab 
+for practice and simulation on your own desktop or note 
+book. This require a desktop or notebook with a bit high 
+requirement.
+
+You can use
+VMware\footnote{\url{https://my.vmware.com}}
+ as your virtualization software. Using VMware, we could 
+install Kali Linux as a virtual machine on a Window 10 
+machine. This is the easiest way to run multiple OS on a 
+single machine.
+
+There are Kali Linux virtual machine images from the
+Internet
+\footnote{\url{https://www.offensive-security.com/}}.
+ Download this and install Kali Linux on your
+machine as a virtual machine.
+
+Another approach is using docker or kubenetes. Yet another
+option is running Kali Linux from the cloud. There are many
+options for you to try to build your own penetration testing
+environment.
+
+
 \section{Summary}
 
 For a basic skill, a pen tester need to be familiar with
@@ -691,12 +717,138 @@ TCP will guarantee a packet will arrive, unlike UDP. Many
 of current usage of TCP are HTTP, POP3 and FTP.
 
 
+We could summarize UDP and TCP as follow;TCP (Guaranteed
+delivery, Connection oriented, Optimized for sessions) and
+UDP (Delivery not guaranteed, Connectionless Optimized for
+query responses). Both UDP and TCP work at the Transport
+Layer.
+
+\paragraph{Internet Control Message Protocol (ICMP)} work at
+the Network layer. ICMP carries information about the state
+of a network and error conditions that occur. It is for the
+transmission of data. One of the most common uses for ICMP 
+is to test whether a host is up. This done using 
+\textit{ping}. Some sites disable response to a 
+\textbf{ping}. \textbf{traceroute} can be use to map a 
+network by sending ICMP to hosts.
+
+\begin{verbatim}
+$ping www.google.com
+PING www.google.com (216.58.196.36) 56(84) bytes of data.
+64 bytes from kul09s12-in-f4.1e100.net (216.58.196.36): 
+icmp_seq=1 ttl=57 time=5.83 ms
+64 bytes from kul09s12-in-f4.1e100.net (216.58.196.36): 
+icmp_seq=2 ttl=57 time=6.79 ms
+64 bytes from kul09s12-in-f4.1e100.net (216.58.196.36): 
+icmp_seq=3 ttl=57 time=9.39 ms
+64 bytes from kul09s12-in-f4.1e100.net (216.58.196.36): 
+icmp_seq=4 ttl=57 time=11.0 ms
+\end{verbatim}
+
+\begin{verbatim}
+$traceroute www.google.com.my
+traceroute to www.google.com.my (172.217.24.163), 30 hops 
+max, 60 byte packets
+1  router.asus.com (192.168.1.1)  1.912 ms  1.926 ms  1.907 
+ms
+2  10.233.33.36 (10.233.33.36)  3.016 ms  4.412 ms  4.430 ms
+3  10.55.41.62 (10.55.41.62)  7.086 ms  7.103 ms 
+10.55.41.60 (10.55.41.60)  7.171 ms
+4  72.14.197.66 (72.14.197.66)  8.468 ms 72.14.213.128 
+(72.14.213.128)  9.997 ms  9.950 ms
+5  108.170.250.1 (108.170.250.1)  9.967 ms *  9.916 ms
+6  108.170.230.100 (108.170.230.100)  12.379 ms 
+108.170.226.202 (108.170.226.202)  7.279 ms 108.170.226.81 
+(108.170.226.81)  9.726 ms
+7  108.170.226.81 (108.170.226.81)  9.215 ms 
+108.170.249.250 (108.170.249.250)  7.083 ms 
+kul08s01-in-f3.1e100.net (172.217.24.163)  6.589 ms
+\end{verbatim}
+
+In summary, TCP - reliable, connection-oriented, significant
+overhead. UDP - fast, connectionless, unreliable. ICMP -
+network error reporting and troubleshooting. Ping -
+determine live hosts. Traceroute - determine network path.
+
+The ability to capture network data is essential to network
+security analysis. You need to know how to capture network
+data, analyze it, and look for patterns. When a common
+attack pattern is recognized, a response is needed. You need
+to determine if it is a false positive or if it warrants a
+response. Knowing the normal usage patterns on your network
+will help you recognize something abnormal when it happens.
+Malicious traffic occurs on organization networks every day.
+
+\paragraph{Sniffer} is a program that can capture data
+packet traveling in a network. It can be used to capture
+password, session and data in the network. Each device in a
+network has a physical address, or Ethernet address. This is
+the same with MAC address. ARP is used to map Ethernet
+address with the physical device.
+
+A device will only accepted data for it address. However, if
+a device is in a \textbf{promiscuous} mode, it will accept
+all data. A sniffer is run in a promiscuous mode. A hub will
+broadcast data in all its ports. All data transmitted by
+host is visible to other hosts on the hub. However, a switch
+will only send the data to the correct port for the target
+host. Thus, promiscuous mode has no effect. In a switched
+environment, we could use \textit{dsniff} or
+\textit{ettercap} to sniff data communication.
+
+Some tools for network sniffing are dsniff, tcpdump,
+wireshark, ettercap, kismet and others. In theory, dsniff
+send out a forged ARP address to the target host, and assume
+identity as a gateway. Any traffic to the target host will
+be send first to the attacker host, and then forwarded to
+the target host. This way, the attacker host will be able to
+view all data traffic of the target host.
+
+\paragraph{TCPdump} is a program to dump TCP traffic from
+the network. This program only collect data, and you have to
+analyze the data for results. Example of \textbf{tcpdump} 
+is shown below.
+
+\begin{verbatim}
+01:33:42.618477 STP 802.1d, Config, Flags [none], bridge-id 
+8000.38:d5:47:63:81:60.8002, length 35
+01:33:44.398515 IP 172.217.194.189.https > 
+zamri-Inspiron-3520.35056: Flags [P.], seq 593:653, ack 
+328, win 267, options [nop,nop,TS val 123569294 ecr 
+1159320055], length 60
+01:33:44.398586 IP zamri-Inspiron-3520.35056 > 
+172.217.194.189.https: Flags [.], ack 653, win 385, options 
+[nop,nop,TS val 1159348652 ecr 123569294], length 0
+01:33:44.463280 IP win10-PC.netbios-dgm > 
+192.168.1.255.netbios-dgm: NBT UDP PACKET(138)
+01:33:44.464125 STP 802.1d, Config, Flags [none], bridge-id 
+8000.38:d5:47:63:81:60.8002, length 35
+01:33:44.595987 IP zamri-Inspiron-3520.33454 > 
+kul06s11-in-f46.1e100.net.https: Flags [.], ack 609, win 
+245, options [nop,nop,TS val 2638389607 ecr 2573465010], 
+length 0
+01:33:44.596050 IP zamri-Inspiron-3520.41846 > 
+kul09s02-in-f3.1e100.net.https: Flags [.], ack 5204, win 
+362, options [nop,nop,TS val 3529531013 ecr 2655017357], 
+length 0
+\end{verbatim}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 \section{DNS}
 
-DNS (Domain NAme Server) is how Internet resolve IP
+DNS (Domain Name Server) is how Internet resolve IP
 addresses into host names. It is hard for people to remember
 IP addresses, thus Internet come up with a scheme to make it
 easy for people to remember IP addresses. DNS maps  IP 
@@ -768,7 +920,7 @@ security patches.
 \textbf{Denial of Service} attack involve flooding DNS with
 a large number of queries, thus overwhelm the DNS server.
 This  makes the DNS servers unavailable. One solution is 
-using cloud service such as \textit{cloudflare}.
+using cloud service such as \textit{Cloudflare}.
 
 Footprinting involves using DNS  to learn about the servers
 in the Internet. The gathered information can be used to 
@@ -785,6 +937,22 @@ formulate attacks against the servers.
 
 
 \chapter{Network}
+
+\section{Terminology}
+
+Security is about controlling risk to your critical assets.
+We try to minimize the risk and protect the confidentiality,
+integrity and availability of our critical systems (C-I-A).
+In health industry, confidentiality is utmost important,
+while in banking it is integrity and availability. In
+education, we probably focus on confidentiality and
+availability.
+
+\paragraph{Threat} is any activities that represent possible
+danger to your information. \textbf{vulnerability} is a 
+weakness in your systems or processes that could be 
+exploited by a threat. 
+
 
 \section{Footprinting}
 
@@ -809,6 +977,25 @@ formulate attacks against the servers.
 \chapter{Mobile}
 
 \chapter{Server and Desktop}
+
+
+\section{Malware}
+
+\paragraph{Malware} is a generic term that refers to
+software that was written with malicious intent and performs
+its actions without the user's permission. A virus is a
+malware that has the ability to replicate and possesses
+parasitic properties. A macro virus is implemented within
+applications, such as a word processor and a spreadsheet. A
+program infector a malicious code that infects by attaching
+itself to existing program files such as \url{.com} and
+\url{.exe}.
+
+\section{Botnet}
+
+
+
+
 
 \glossary{}
 
