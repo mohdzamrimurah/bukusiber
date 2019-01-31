@@ -71,7 +71,7 @@
 	MIT License. This work is licensed under a Creative Commons Attribution 
 	4.0 International License.
 	
-	Penetration Testing and Ethical Hacking/ .\\
+	Penetration Testing and Ethical Hacking/.\\
 	\hspace*{6pt} p. cm.
 	
 	Includes bibliographical references and index.\\ ISBN ????
@@ -104,9 +104,9 @@
 
 ALhamduiLlah. This book is based on lecture notes for
 \textit{TX6244:Ethical Hacking and Penetration Testing}, a course
-offered by Center for Cybersecurity(UKM) since 2014. This course is
-jointly developed by Center for Cybersecurity(UKM) and Cybersecurity
-Malaysia(CSM).
+offered by Center for Cybersecurity (UKM) since 2014. This course is
+jointly developed by Center for Cybersecurity (UKM) and Cybersecurity
+Malaysia (CSM).
 
 We hope this book will provide a good overview for students into the
 field of penetration testing and ethical hacking. We also hope these
@@ -217,7 +217,7 @@ it easier to conduct penetration testing.
 
 Linux\cite{sobell2015practical,barrett2016linux} is an
 operating system for computer, much like Window 10 or Mac
-OSX. It is based on Unix. Linux was first developed in 1991
+OSX\@. It is based on Unix. Linux was first developed in 1991
 by Linus Torvalds, a Finnish graduate student. Today, it is
 being develops and maintains by a group of software
 developers head by Linus Torvalds. It is widely uses in
@@ -232,22 +232,20 @@ modify. The open source creative license make it possible
 for any person or organization to modify Linux to fit their
 needs. For example, Chinese government produce their own
 amended version of Linux for the Chinese
-market(\url{http://www.kylinos.com.cn/}). Similarly, many
-organizations such as NSA, Google(\url{gLinux}), Amazon have
+market\footnote{(\url{http://www.kylinos.com.cn/})}. Similarly, many
+organizations such as NSA, Google (\url{gLinux}), Amazon have
 customized Linux for their need. Figure~\ref{fig:ubuntu}
 shows a Linux Ubuntu desktop.
 
 There are many Linux distributions such as Ubuntu, SuSE,
-Debian and Red Hat. Red Hat(Linux) is widely used as
+Debian and Red Hat. Red Hat (Linux) is widely used as
 business servers, Ubuntu is by customer desktop and Debian
 is commonly uses by software developers. A Linux
 distribution is a Linux operating system with other useful
 software such as text editor, pdf viewer, browser, music
 player and image processing. A Linux distribution is similar
 to a PC with Window 10, Microsoft Office software and other
-familiar software applications.
-
-\index{topics}{Linux}
+familiar software applications. \index{topics}{Linux}
 \index{topics}{Kali Linux}
 
 %\begin{center}
@@ -296,15 +294,13 @@ or VMware. Another is using docker. And, for more advance
 user, you can run Kali Linux on the cloud, without
 installing anything on your computer. Please google for more
 information if you are interested in installing Kali Linux
-as your pen test platform.
-
-\index{topics}{docker}
+as your pen test platform. \index{topics}{docker}
 
 
 One widely used Linux derivative is Android, an operating
 system used in mobile phone. It is estimated that Android
 has a market share of about 70\% for mobile phone and 30\%
-for iOS.
+for iOS\@.
 
 
 
@@ -344,7 +340,6 @@ show a sample repository at \url{github.com}.
 \label{fig:github}
 \end{figure}
 
-\index{topics}{git} \index{authors}{Loeliger, Jon}
 
 \section{Python}
 
@@ -357,10 +352,7 @@ development. It has been used to develop tools for pen
 tests.  There are many pen test tools written in Python, 
 hosted at \url{github.com}. An example is \url{Sublist3r}, 
 a tool for network scanning and reconnaissance 
-\index{topics}{Sublist3r}
-
-\index{topics}{Python}
-\index{authors}{Lutz, Mark}
+\index{topics}{Sublist3r}. \index{topics}{git} \index{authors}{Loeliger, Jon} \index{topics}{Python} \index{authors}{Lutz, Mark}
 
 Many processes in a pen test can be automated using Python.
 We could develop new tools for pen tests, automated the
@@ -616,8 +608,8 @@ It consist of seven layers; physical, data link, network,
 transport, session, presentation and application. The TCP/IP
 model have four layers; network, Internet, transport and
 application. Both models can be mapped into each other;
-network (physical, data link), Internet(network), 
-transport(transport), application(session, presentation, 
+network (physical, data link), Internet (network), 
+transport (transport), application (session, presentation, 
 application)(Figure~\ref{fig:iso1},~\ref{fig:iso2}). 
 \index{topics}{OSI 
 model}
@@ -693,7 +685,7 @@ routed in the Internet. The 3 IP addresses are;
 host. Loopback addresses are often used by services that
 must contact other services running on the same machine. 
 
-A network interface have two address; MAC(Media Access
+A network interface have two address; MAC (Media Access
 Control) address such as $84:4b:f5:68:39:cf$ and an IP
 address such as $192.168.1.181$. The first 3 octat indicate
 the company, for instance $84:4b:f5$ is \textbf{DELL INC}.
@@ -702,19 +694,19 @@ is from \textbf{HON HAI PRECISION}.
 (\url{https://hwaddress.com/}). Address Resolution Protocol
 (ARP) is used to map an IP address to a MAC address. ARP is
 the scheme used by one host on a LAN to determine the MAC
-address of another host on the same LAN. The result will be
+address of another host on the same LAN\@. The result will be
 put in an ARP cache.
 
 
 \paragraph{UDP (User Datagram Protocol)} is one of the 
-protocol used with IP. UDP is used in situations in which 
+protocol used with IP\@. UDP is used in situations in which 
 it is okay if some packets are lost. It is fast and 
 efficient. It is used in audio streaming and DNS queries. 
-Afew uses of UDP is NTP, BOOTP, DHCP, NFS, SNMP, and TFTP. 
+Afew uses of UDP is NTP, BOOTP, DHCP, NFS, SNMP, and TFTP\@. 
 
 \paragraph{TCP} is commonly used transport protocol today. 
-TCP will guarantee a packet will arrive, unlike UDP. Many 
-of current usage of TCP are HTTP, POP3 and FTP.
+TCP will guarantee a packet will arrive, unlike UDP\@. Many 
+of current usage of TCP are HTTP, POP3 and FTP\@.
 
 
 We could summarize UDP and TCP as follow;TCP (Guaranteed
@@ -765,10 +757,8 @@ ms
 kul08s01-in-f3.1e100.net (172.217.24.163)  6.589 ms
 \end{verbatim}
 
-In summary, TCP - reliable, connection-oriented, significant
-overhead. UDP - fast, connectionless, unreliable. ICMP -
-network error reporting and troubleshooting. Ping -
-determine live hosts. Traceroute - determine network path.
+In summary, TCP (reliable, connection-oriented, significant
+overhead), UDP (fast, connectionless, unreliable), ICMP (network error reporting and troubleshooting), Ping (determine live hosts), Traceroute (determine network path).
 
 The ability to capture network data is essential to network
 security analysis. You need to know how to capture network
@@ -867,7 +857,7 @@ the query into a top level DNS, and so on until the query is
 answered.
 
 For instance, if we are interested in all the hosts
-available on $.ukm.my$, we could query DNS for UKM.
+available on $.ukm.my$, we could query DNS for UKM\@.
 Similarly, we could query DNS for $.my$ for all the hosts in
 $.my$ domain. This is public information, and not hidden
 from the users. An example of DNS query is shown below.
@@ -883,7 +873,7 @@ Address: 103.219.237.14
 \end{verbatim}
 
 A DNS also cache the queries, if the queries is retrieved
-from other top level DNS. This make it faster to response to
+from other top level DNS\@. This make it faster to response to
 similar queries. This allow the possibility of DNS cache
 poisoning where a hacker inject incorrect information into
 the cache.
@@ -954,6 +944,7 @@ weakness in your systems or processes that could be
 exploited by a threat. 
 
 
+
 \section{Footprinting}
 
 \section{Reconnaissance}
@@ -964,7 +955,68 @@ exploited by a threat.
 
 
 \chapter{Web Apps}
+
+This chapter discuss Web apps and the basic components that make up the Web.
+Unerstanding the basic would make it easier to understand how attacks and defenses
+works on the Web.
+\section{Basic}
+
+The Web was instroduced in early 1990. The main protocol for web data
+transfer is HTTP (Hypertext Transfer Protocol). A basic web app consist of
+3 layers; presentation layer (web server), application layer (business logic
+and code) and persistent layer (database). Common presentation layer is
+Apache webserver and MIcrosoft IIS. The application layer consist of code 
+or web apps written in any programming language such as ASP, Python, PHP and
+others. This layer will accept input from the presentation layer, and access the
+persistent layer for data and output. Persistent layer consist of DBMS such as
+Oracle, MySQL, Postgres and MSSQL Server.
+
+Many new technologies in the web apps development. Currently, many web apps are hosted
+on the cloud, and deployed using container such as docker or virtualization. This limit
+the effect if the web apps are compromised.
+
+Many of the current web apps are developed using web frameworks. Widely used frameworks
+are like Laravel, .NET, Zope, Ruby on Rail, Zend and others. One of the widely used 
+approach in web development is using REST, widely used by RoR. Another recent
+development are using \url{node.js}, noSQL database and cloud web hosting.
+
 \section{Web Apps}
+
+Web apps uses HTTP protocol\cite{gourley2002http} for data communication. \url{URL} (Uniform 
+Resource Locator) a standard format for
+Web address. Examples are such as \url{http://www.ukm.my} and \url{http://www.google.com}.
+The first part is the protocol (e.g http), and the second part is the resource.
+
+The HITP protocol is transaction-oriented. Clients make requests and servers send responses. 
+The protocol is stateless. Once a server responds to a request, it generally forgets all about it. 
+lf the client makes another request, the server cannot associate the client with any particular
+session.
+
+\begin{figure}[ht]
+\includegraphics[width=.75\textwidth]{http.png}
+\caption{An http session}
+\label{fig:http}
+\end{figure}
+
+There are 4 basic methods for http; GET, POST, HEAD, and PUT\@. A client would 
+send a request to a webs server using port 80. This request will use the method
+GET\@. The web server will send back a response with consist of 2 parts; a header
+and a body. The body is written in HTML markup language. The browser on the
+client side will process the html code and display the result on the web
+browser.
+
+Many current web pages also include javascript code for user interaction and 
+computing. The javascript will be process by the web browser internal engine.
+In short, the web browser will receive a file consist of html code and javascript
+code, and the browser will display the result.
+
+If a user submit some info using a form on the web site, http method POST is 
+used. If a user upload a file into the web server, http method PUT is used.
+
+
+
+
+
 \section{Reconnaissance}
 \section{Scanning}
 \section{Enumeration}
@@ -991,6 +1043,7 @@ program infector a malicious code that infects by attaching
 itself to existing program files such as \url{.com} and
 \url{.exe}.
 
+
 \section{Botnet}
 
 
@@ -1013,7 +1066,7 @@ itself to existing program files such as \url{.com} and
 
 \term{Port Scan}{A port scan is a series of messages sent by someone
   attempting to break into a computer to learn which computer network
-  services, each associated with a "well-known" port number, the
+  services, each associated with a well-known port number, the
   computer provides. Port scanning, a favorite approach of computer
   cracker, gives the assailant an idea where to probe for
   weaknesses. Essentially, a port scan consists of sending a message
@@ -1104,3 +1157,7 @@ XSS and CSRF Attacks The candidate will demonstrate an understanding
 of how XSS and CSRF attacks work and how to conduct them.
 
 %
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
